@@ -16,11 +16,11 @@
 - GitHub: [@virag-ky](https://github.com/virag-ky)
 - Twitter: [@Virag_Ky](https://twitter.com/Virag_Ky)
 
-👤 **Author2**
+👤 **Assad Isah**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@nottherealalanturing](https://github.com/nottherealalanturing)
+- Twitter: [@assadeesaa](https://twitter.com/assadeesaa)
+- LinkedIn: [Assad Isah](https://linkedin.com/in/assadisah)
 
 ## 🤝 Contributing
 
