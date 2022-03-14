@@ -3,11 +3,10 @@ const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
 const addBtn = document.querySelector('#submit');
 
-
-const bookObjects = JSON.parse(localStorage.getItem("book-collection")) || [];
+const bookObjects = JSON.parse(localStorage.getItem('book-collection')) || [];
 /* eslint-disable */
 function deleteBook() {
-  [...document.querySelectorAll(".deletebtn")].map((element) => {
+  [...document.querySelectorAll('.deletebtn')].map((element) => {
     const elementIndex = parseInt(element.getAttribute("data"), 10);
     element.addEventListener("click", () => {
       bookObjects.splice(elementIndex, 1);
