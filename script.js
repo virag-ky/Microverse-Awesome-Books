@@ -1,9 +1,20 @@
-const bookSection = document.querySelector(".book-list");
-const bookTitle = document.querySelector("#title");
-const bookAuthor = document.querySelector("#author");
-const addBtn = document.querySelector("#submit");
+const bookSection = document.querySelector('.book-list');
+const bookTitle = document.querySelector('#title');
+const bookAuthor = document.querySelector('#author');
+const addBtn = document.querySelector('#submit');
 
-const bookObjects = JSON.parse(localStorage.getItem("book-collection"));
+const bookObjects = JSON.parse(localStorage.getItem('book-collection'));
+/* eslint-disable */
+function deleteBook() {
+  [...document.querySelectorAll(".deletebtn")].map((element) => {
+    const elementIndex = parseInt(element.getAttribute("data"), 10);
+    element.addEventListener("click", () => {
+      bookObjects.splice(elementIndex, 1);
+      localStorage.setItem("book-collection", JSON.stringify(bookObjects));
+      createBook();
+    });
+  });
+}
 
 function createBook() {
   bookSection.innerHTML = "";
@@ -26,33 +37,22 @@ function createBook() {
   }
   deleteBook();
 }
-
+/* eslint-enable */
 createBook();
 
 function addBook(bookTitle, bookAuthor) {
-  let obj = {};
+  const obj = {};
   obj.title = bookTitle.value;
   obj.author = bookAuthor.value;
   bookObjects.push(obj);
   createBook();
 }
 
-addBtn.addEventListener("click", (e) => {
+addBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if (bookTitle.value === "" || bookAuthor.value === "") {
+  if (bookTitle.value === '' || bookAuthor.value === '') {
     return;
   }
   addBook(bookTitle, bookAuthor);
-  localStorage.setItem("book-collection", JSON.stringify(bookObjects));
+  localStorage.setItem('book-collection', JSON.stringify(bookObjects));
 });
-
-function deleteBook() {
-  [...document.querySelectorAll(".deletebtn")].map((element) => {
-    const elementIndex = parseInt(element.getAttribute("data"));
-    element.addEventListener("click", () => {
-      bookObjects.splice(elementIndex, 1);
-      localStorage.setItem("book-collection", JSON.stringify(bookObjects));
-      createBook();
-    });
-  });
-}
