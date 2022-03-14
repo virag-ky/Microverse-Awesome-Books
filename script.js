@@ -1,10 +1,10 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const bookSection = document.querySelector(".book-list");
-  const bookTitle = document.querySelector("#title");
-  const bookAuthor = document.querySelector("#author");
-  const addBtn = document.querySelector("#submit");
+window.addEventListener('DOMContentLoaded', () => {
+  const bookSection = document.querySelector('.book-list');
+  const bookTitle = document.querySelector('#title');
+  const bookAuthor = document.querySelector('#author');
+  const addBtn = document.querySelector('#submit');
 
-  const bookObjects = JSON.parse(localStorage.getItem("book-collection")) || [];
+  const bookObjects = JSON.parse(localStorage.getItem('book-collection')) || [];
   /* eslint-disable */
   function deleteBook() {
     [...document.querySelectorAll(".deletebtn")].map((element) => {
@@ -49,14 +49,14 @@ window.addEventListener("DOMContentLoaded", () => {
     createBook();
   }
 
-  addBtn.addEventListener("click", (e) => {
+  addBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if (bookTitle.value === "" || bookAuthor.value === "") {
+    if (bookTitle.value === '' || bookAuthor.value === '') {
       return;
     }
     addBook(bookTitle, bookAuthor);
-    localStorage.setItem("book-collection", JSON.stringify(bookObjects));
-    bookTitle.value = "";
-    bookAuthor.value = "";
+    localStorage.setItem('book-collection', JSON.stringify(bookObjects));
+    bookTitle.value = '';
+    bookAuthor.value = '';
   });
 });
