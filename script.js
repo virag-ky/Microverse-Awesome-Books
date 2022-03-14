@@ -1,4 +1,7 @@
 const bookSection = document.querySelector(".book-list");
+const bookTitle = document.querySelector("#title");
+const bookAuthor = document.querySelector("#author");
+const addBtn = document.querySelector("#submit");
 
 const bookObjects = [
   {
@@ -31,3 +34,16 @@ function createBook() {
 }
 
 createBook();
+
+function addBook(bookTitle, bookAuthor) {
+  let obj = {};
+  obj.title = bookTitle.value;
+  obj.author = bookAuthor.value;
+  bookObjects.push(obj);
+  createBook();
+}
+
+addBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addBook(bookTitle, bookAuthor);
+});
