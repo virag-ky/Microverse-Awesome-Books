@@ -18,9 +18,9 @@
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@nottherealalanturing](https://github.com/nottherealalanturing)
+- Twitter: [@assadeesaa](https://twitter.com/assadeesaa)
+- LinkedIn: [Assad Isah](https://linkedin.com/in/Assadisah)
 
 ## 🤝 Contributing
 
