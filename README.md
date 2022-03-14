@@ -16,7 +16,7 @@
 - GitHub: [@virag-ky](https://github.com/virag-ky)
 - Twitter: [@Virag_Ky](https://twitter.com/Virag_Ky)
 
-👤 **Author2**
+👤 **Assad Isah**
 
 - GitHub: [@nottherealalanturing](https://github.com/nottherealalanturing)
 - Twitter: [@assadeesaa](https://twitter.com/assadeesaa)

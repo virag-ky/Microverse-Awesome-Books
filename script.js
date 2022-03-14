@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const addBtn = document.querySelector('#submit');
 
   const bookObjects = JSON.parse(localStorage.getItem('book-collection')) || [];
+
   /* eslint-disable */
   function deleteBook() {
     [...document.querySelectorAll(".deletebtn")].map((element) => {
@@ -38,6 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     deleteBook();
   }
+
   /* eslint-enable */
   createBook();
 
