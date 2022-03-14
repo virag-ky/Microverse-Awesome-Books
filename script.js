@@ -3,7 +3,7 @@ const bookTitle = document.querySelector("#title");
 const bookAuthor = document.querySelector("#author");
 const addBtn = document.querySelector("#submit");
 
-const bookObjects = JSON.parse(localStorage.getItem("book-collection"));
+const bookObjects = JSON.parse(localStorage.getItem("book-collection")) || [];
 
 function createBook() {
   bookSection.innerHTML = "";
