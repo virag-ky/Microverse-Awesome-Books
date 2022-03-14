@@ -20,7 +20,7 @@
 
 - GitHub: [@nottherealalanturing](https://github.com/nottherealalanturing)
 - Twitter: [@assadeesaa](https://twitter.com/assadeesaa)
-- LinkedIn: [Assad Isah](https://linkedin.com/in/Assadisah)
+- LinkedIn: [Assad Isah](https://linkedin.com/in/assadisah)
 
 ## 🤝 Contributing
 
