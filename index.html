@@ -11,23 +11,25 @@
     <header>
       <nav>
         <h1>Awesome Books</h1>
-        <ul>
+        <ul class="navItems">
           <li id="list"><a>List</a></li>
           <li id="add-new"><a>Add new</a></li>
           <li id="contact-section"><a>Contact</a></li>
         </ul>
       </nav>
-      <p id="date">15. March 2022</p>
+      <p id="date"></p>
     </header>
-    <h2>All Awesome Books</h2>
+
+    <h2 class="header">All Awesome Books</h2>
     <section class="book-list"></section>
-    <form>
+
+    <form class="add-new hide">
       <h2>Add a new book</h2>
       <input type="text" id="title" placeholder="Enter book title" />
       <input type="text" id="author" placeholder="Enter author" />
       <input type="submit" id="submit" value="Add" />
     </form>
-    <section id="contact">
+    <section id="contact" class="contact-section hide">
       <h2>Contact Information</h2>
       <p>
         If you have any questions or you just want to say "Hello", you can reach
@@ -45,3 +47,9 @@
     <script src="script.js" type="module"></script>
   </body>
 </html>
+
+<!-- REMOVE COMMENT BEFORE SUBMITTING
+1. I removed the default text from date on line 20
+2. I added a class to the ul on line 14 so i could get access to all it's children (the nav items) through the DOM
+3. I added the "hide" class (check the css file) to the form and contact, as they are hidden by default
+-->
