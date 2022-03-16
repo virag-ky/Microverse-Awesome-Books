@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const bookAuthor = document.querySelector('#author');
   const addBtn = document.querySelector('#submit');
   const navItems = Array.from(
-    document.querySelectorAll('.navItems')[0].children
+    document.querySelectorAll('.navItems')[0].children,
   );
   const bookList = document.querySelector('.book-list');
   const header = document.querySelector('.header');
@@ -121,19 +121,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setInterval(time, 1000);
 });
-
-/* REMOVE COMMENT BEFORE SUBMITTING 
-1.  I added new DOM elements on line 8-15
-2. On Line 77-100 I created a function navigate that accepts a key argument 
-(which should be the name of the class we wish to display), 
-a switch case checks to see if it matches any of the classes and then hides 
-every other section by adding the hide class (check the css file) to that class
-3. on line 102-115 I created a time string of the current time with the Date object and then add it to date element on our HTML
-4. line 117-122 the navigate function is added to all three element with a forEach loop, the argument pass to the function is gotten 
-by checking the source of the event (the target), the parent of the target (the li elements) and then the id which has the same name as
-the classes of the section. we then check for this names in the switch case in the navigate function
-4. line 123, the time function only return the current time when ever it is called, so we need to call it everytime to update the time,
-we do this with a setInterval function (which is a built in function), the first argument is a function we want to call, the second argument 1000
-is the time interval in milliseconds, so the time function gets called every one second and the time gets updated as a result.
-
-*/

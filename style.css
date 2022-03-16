@@ -136,7 +136,7 @@ form > input:focus {
   outline: none;
 }
 
-input[type='submit'] {
+input[type="submit"] {
   width: 25%;
   align-self: flex-end;
   padding: 5px;
@@ -146,7 +146,7 @@ input[type='submit'] {
   font-weight: 700;
 }
 
-input[type='submit']:hover {
+input[type="submit"]:hover {
   cursor: pointer;
   background-color: #9fd3c7;
   color: #142d4c;
@@ -227,7 +227,7 @@ footer {
     font-size: 1.2rem;
   }
 
-  input[type='submit'] {
+  input[type="submit"] {
     padding: 15px 20px;
   }
 
@@ -251,7 +251,3 @@ footer {
     padding: 15px 100px;
   }
 }
-
-/* REMOVE COMMENT BEFORE SUMBITTING 
-1. I added a class 'hide' on line 188, which will be dynamically added to any section we wish to hide on the browser
-*/
