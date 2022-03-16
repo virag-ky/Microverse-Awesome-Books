@@ -5,6 +5,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const bookTitle = document.querySelector('#title');
   const bookAuthor = document.querySelector('#author');
   const addBtn = document.querySelector('#submit');
+  const navItems = Array.from(
+    document.querySelectorAll('.navItems')[0].children,
+  );
+  const bookList = document.querySelector('.book-list');
+  const header = document.querySelector('.header');
+  const newBook = document.querySelector('.add-new');
+  const contact = document.querySelector('.contact-section');
+  const siteDate = document.querySelector('#date');
 
   class Library {
     constructor() {
@@ -64,4 +72,52 @@ window.addEventListener('DOMContentLoaded', () => {
     bookTitle.value = '';
     bookAuthor.value = '';
   });
+
+  function navigate(key) {
+    switch (key) {
+      case 'list':
+        bookList.classList.remove('hide');
+        header.classList.remove('hide');
+        newBook.classList.add('hide');
+        contact.classList.add('hide');
+        break;
+      case 'add-new':
+        bookList.classList.add('hide');
+        header.classList.add('hide');
+        newBook.classList.remove('hide');
+        contact.classList.add('hide');
+        break;
+      case 'contact-section':
+        bookList.classList.add('hide');
+        header.classList.add('hide');
+        newBook.classList.add('hide');
+        contact.classList.remove('hide');
+        break;
+      default:
+        break;
+    }
+  }
+
+  function time() {
+    const date = new Date();
+    const locale = navigator.language;
+    const options = {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: 'false',
+    };
+    siteDate.textContent = `${date.toLocaleTimeString(locale, options)}`;
+  }
+
+  navItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      navigate(e.target.parentElement.id);
+    });
+  });
+
+  setInterval(time, 1000);
 });
