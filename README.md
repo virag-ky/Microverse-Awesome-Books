@@ -20,6 +20,27 @@
 
 ## Live Site URL: https://virag-ky.github.io/Microverse-Awesome-Books/
 
+## Getting started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+* web browser (e.g. Google Chrome)
+* text editor (e.g. VSCode)
+* CLI/terminal
+
+### Setup the project locally
+```
+git clone git@github.com:virag-ky/Microverse-Awesome-Books.git
+```
+
+### Usage
+* open the index.html file in the browser
+
+### Deployment
+* This project is deployed with Github pages.
+
+
 
 ## Authors
 
