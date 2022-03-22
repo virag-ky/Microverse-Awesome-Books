@@ -1,22 +1,23 @@
-import Book from './book.js';
+import Book from "./book.js";
 
-window.addEventListener('DOMContentLoaded', () => {
-  const bookSection = document.querySelector('.book-list');
-  const bookTitle = document.querySelector('#title');
-  const bookAuthor = document.querySelector('#author');
-  const addBtn = document.querySelector('#submit');
+window.addEventListener("DOMContentLoaded", () => {
+  const bookSection = document.querySelector(".book-list");
+  const bookTitle = document.querySelector("#title");
+  const bookAuthor = document.querySelector("#author");
+  const addBtn = document.querySelector("#submit");
   const navItems = Array.from(
-    document.querySelectorAll('.navItems')[0].children,
+    document.querySelectorAll(".navItems")[0].children
   );
-  const bookList = document.querySelector('.book-list');
-  const header = document.querySelector('.header');
-  const newBook = document.querySelector('.add-new');
-  const contact = document.querySelector('.contact-section');
-  const siteDate = document.querySelector('#date');
+  const titleH1 = document.querySelector("h1");
+  const bookList = document.querySelector(".book-list");
+  const header = document.querySelector(".header");
+  const newBook = document.querySelector(".add-new");
+  const contact = document.querySelector(".contact-section");
+  const siteDate = document.querySelector("#date");
 
   class Library {
     constructor() {
-      this.library = JSON.parse(localStorage.getItem('book-collection')) || [];
+      this.library = JSON.parse(localStorage.getItem("book-collection")) || [];
     }
 
     addBook(bookTitle, bookAuthor) {
@@ -26,18 +27,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     createBook() {
-      bookSection.innerHTML = '';
+      bookSection.innerHTML = "";
       for (let i = 0; i < this.library.length; i += 1) {
-        const bookContainer = document.createElement('div');
-        bookContainer.setAttribute('class', 'container');
-        const bookDescription = document.createElement('h2');
-        bookDescription.setAttribute('class', 'width');
-        const deleteBtn = document.createElement('button');
-        deleteBtn.setAttribute('class', 'deletebtn');
-        deleteBtn.setAttribute('data', i);
+        const bookContainer = document.createElement("div");
+        bookContainer.setAttribute("class", "container");
+        const bookDescription = document.createElement("h2");
+        bookDescription.setAttribute("class", "width");
+        const deleteBtn = document.createElement("button");
+        deleteBtn.setAttribute("class", "deletebtn");
+        deleteBtn.setAttribute("data", i);
 
         bookDescription.textContent = `${this.library[i].title} by ${this.library[i].author}`;
-        deleteBtn.textContent = 'Delete';
+        deleteBtn.textContent = "Delete";
 
         bookContainer.appendChild(bookDescription);
         bookContainer.appendChild(deleteBtn);
@@ -47,11 +48,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     deleteBook() {
-      [...document.querySelectorAll('.deletebtn')].forEach((element) => {
-        const elementIndex = parseInt(element.getAttribute('data'), 10);
-        element.addEventListener('click', () => {
+      [...document.querySelectorAll(".deletebtn")].forEach((element) => {
+        const elementIndex = parseInt(element.getAttribute("data"), 10);
+        element.addEventListener("click", () => {
           this.library.splice(elementIndex, 1);
-          localStorage.setItem('book-collection', JSON.stringify(this.library));
+          localStorage.setItem("book-collection", JSON.stringify(this.library));
           this.createBook();
         });
       });
@@ -62,36 +63,42 @@ window.addEventListener('DOMContentLoaded', () => {
 
   myLibrary.createBook();
 
-  addBtn.addEventListener('click', (e) => {
+  addBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    if (bookTitle.value === '' || bookAuthor.value === '') {
+    if (bookTitle.value === "" || bookAuthor.value === "") {
       return;
     }
     myLibrary.addBook(bookTitle, bookAuthor);
-    localStorage.setItem('book-collection', JSON.stringify(myLibrary.library));
-    bookTitle.value = '';
-    bookAuthor.value = '';
+    localStorage.setItem("book-collection", JSON.stringify(myLibrary.library));
+    bookTitle.value = "";
+    bookAuthor.value = "";
   });
 
   function navigate(key) {
     switch (key) {
-      case 'list':
-        bookList.classList.remove('hide');
-        header.classList.remove('hide');
-        newBook.classList.add('hide');
-        contact.classList.add('hide');
+      case "title":
+        bookList.classList.remove("hide");
+        header.classList.remove("hide");
+        newBook.classList.add("hide");
+        contact.classList.add("hide");
         break;
-      case 'add-new':
-        bookList.classList.add('hide');
-        header.classList.add('hide');
-        newBook.classList.remove('hide');
-        contact.classList.add('hide');
+      case "list":
+        bookList.classList.remove("hide");
+        header.classList.remove("hide");
+        newBook.classList.add("hide");
+        contact.classList.add("hide");
         break;
-      case 'contact-section':
-        bookList.classList.add('hide');
-        header.classList.add('hide');
-        newBook.classList.add('hide');
-        contact.classList.remove('hide');
+      case "add-new":
+        bookList.classList.add("hide");
+        header.classList.add("hide");
+        newBook.classList.remove("hide");
+        contact.classList.add("hide");
+        break;
+      case "contact-section":
+        bookList.classList.add("hide");
+        header.classList.add("hide");
+        newBook.classList.add("hide");
+        contact.classList.remove("hide");
         break;
       default:
         break;
@@ -102,21 +109,25 @@ window.addEventListener('DOMContentLoaded', () => {
     const date = new Date();
     const locale = navigator.language;
     const options = {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-      hour12: 'false',
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      hour12: "false",
     };
     siteDate.textContent = `${date.toLocaleTimeString(locale, options)}`;
   }
 
   navItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener("click", (e) => {
       navigate(e.target.parentElement.id);
     });
+  });
+
+  titleH1.addEventListener("click", (e) => {
+    navigate(e.target.id);
   });
 
   setInterval(time, 1000);
