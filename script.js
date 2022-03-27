@@ -2,7 +2,7 @@ import Book from "./book.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   const bookSection = document.querySelector(".book-list");
-  const bookTitle = document.querySelector("#title");
+  const bookTitle = document.querySelector("#title-input");
   const bookAuthor = document.querySelector("#author");
   const addBtn = document.querySelector("#submit");
   const navItems = Array.from(
@@ -63,8 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   myLibrary.createBook();
 
-  addBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+  addBtn.addEventListener("click", () => {
     if (bookTitle.value === "" || bookAuthor.value === "") {
       return;
     }
