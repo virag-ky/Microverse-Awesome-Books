@@ -48,6 +48,7 @@ git clone git@github.com:virag-ky/Microverse-Awesome-Books.git
 
 - GitHub: [@virag-ky](https://github.com/virag-ky)
 - Twitter: [@Virag_Ky](https://twitter.com/Virag_Ky)
+- LinkedIn: [virag-kormoczy](https://linkedin.com/in/virag-kormoczy)
 
 👤 **Assad Isah**
 
